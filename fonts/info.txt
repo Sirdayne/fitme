@@ -1,0 +1,82 @@
+-----------fitme_1920-----------------------------------------
+
+
+
+Заголовки:
+Raleway Light, 80px
+
+Форма:
+Заголовок: Raleway Bold, 20px
+Поле ввода: Raleway Regular, 20px
+Кнопка: Raleway Bold, 20px
+
+Меню:
+Raleway Bold, 16px
+
+Подзаголовки: 
+Raleway Bold, 30px
+
+Пояснения: 
+Raleway Regular, 20px
+
+Основной текст ("Для кого?", "Кто я?", "6 шагов...", "Стоимость участия")
+Raleway Regular, 30px
+Raleway Bold, 30px
+
+Шрифт под иконками в блоке "Кто я?"
+Raleway Bold, 40px
+Raleway Regular, 20px
+
+Надписи в футере: 
+Raleway Regular, 16px
+
+Шрифт в "Стоимости участия"
+9000: Raleway Black, 80px
+Подзаголовок: Raleway Regular, 50px
+
+
+
+-----------fitme_640-------------------------------------------
+
+
+
+Меню:
+Raleway Bold, 30 px
+
+
+
+-----------fitme_320-------------------------------------------
+
+
+
+Заголовки:
+Raleway Light, 40px
+
+Форма:
+Заголовок: Raleway Bold, 14px
+Поле ввода: Raleway Regular, 14px
+Кнопка: Raleway Bold, 14px
+
+Меню:
+Raleway Bold, 14px
+
+Подзаголовки: 
+Raleway Bold, 19px
+
+Пояснения: 
+Raleway Regular, 14px
+
+Основной текст ("Для кого?", "Кто я?", "6 шагов...", "Стоимость участия")
+Raleway Regular, 19px
+Raleway Bold, 19px
+
+Шрифт под иконками в блоке "Кто я?"
+Raleway Bold, 25px
+Raleway Regular, 14px
+
+Надписи в футере: 
+Raleway Regular, 14px
+
+Шрифт в "Стоимости участия"
+9000: Raleway Black, 40px
+Подзаголовок: Raleway Regular, 28px
