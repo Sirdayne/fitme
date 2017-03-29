@@ -25,7 +25,7 @@ $(document).ready(function(){
     
     //PARALLAX
     if ($(window).width() > 1200) {
-        var scene = document.getElementById('js-scene');
+        var scene = document.getElementById('main');
         var parallax = new Parallax(scene, {
             originX: 0.5,
             originY: 0.5
@@ -49,4 +49,39 @@ $(document).ready(function(){
         },
         offset: 200
     });
+    
+    function scrollToAnchor(aid){
+        var aTag = $("a[name='"+ aid +"']");
+        $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    }
+
+    $('.js-want').click(function() {
+        scrollToAnchor('an-call');
+    });
+    
+    $(function () {
+            if ($(window).width() > 991) {
+                (function ($) {
+                    var s = skrollr.init({
+                        render: function (data) {}
+                    });
+                })(jQuery);
+                $(window).on('resize', function () {
+                    if ($(window).width() <= 974) {
+                        $('.gnt-1').addClass('notrans');
+                    }
+                    else {
+                        (function ($) {
+                            var s = skrollr.init({
+                                render: function (data) {}
+                            });
+                        })(jQuery);
+                        $('.gnt-1').removeClass('notrans');
+                    }
+                });
+            }
+
+        });
+    
 });
+
