@@ -34,4 +34,19 @@ $(document).ready(function(){
     else{
         
     }
+    
+    $('.section-about').waypoint({
+        handler: function(direction) {
+
+            if (direction === 'down') {
+                $('.navigation').addClass('nav-fix').addClass('fadeInDown');
+                
+            }
+            else{
+                $('.navigation').removeClass('nav-fix').removeClass('fadeInDown');
+            }
+
+        },
+        offset: 200
+    });
 });

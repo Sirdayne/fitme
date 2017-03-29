@@ -7,13 +7,6 @@
  */
 ;(function(window, document, undefined) {
 
-        
-    var mousemove = 0;
-    
-    $( "body" ).mousemove(function() {
-            mousemove = 1;
-    });
-    
   // Strict Mode
   'use strict';
 
@@ -261,8 +254,6 @@
     this.layers = this.element.getElementsByClassName('layer');
     this.depthsX = [];
     this.depthsY = [];
-      
-    
 
     // Configure Layer Styles
     for (var i = 0, l = this.layers.length; i < l; i++) {
@@ -403,42 +394,18 @@
   };
 
   Parallax.prototype.accelerate = function(element) {
-    
-    this.css(element, 'transform', 'translate3d(0,0,0)');
-   
+    this.css(element, 'transform', 'translate3d(0,0,0) rotate(0.0001deg)');
     this.css(element, 'transform-style', 'preserve-3d');
     this.css(element, 'backface-visibility', 'hidden');
-    
   };
 
   Parallax.prototype.setPosition = function(element, x, y) {
-      
-    var blur = Math.round(Math.abs(x+y) / 150) + 'px';
-    var coordinateZ = Math.round(Math.abs(x) * 2) + 'px';
-    var scale = Math.abs(x+y) / 500;
-      
-    if (scale < 1){
-        scale = 1;
-    }
-      
     x = x.toFixed(this.precision) + 'px';
     y = y.toFixed(this.precision) + 'px';
-      
     if (this.transform3DSupport) {
-      
-        if (element.classList.contains('js-layer')) {
-            this.css(element, 'transform', 'translate3d('+x+','+y+','+coordinateZ+') scale('+scale+')');
-        }
-        else{
-            this.css(element, 'transform', 'translate3d('+x+','+y+',0)');
-        }
-        
-        this.css(element, 'filter', 'drop-shadow(rgba(255, 255, 0, 0.247059) 0px 0px 10px) blur('+blur+')'); // MY
-         
-        
+      this.css(element, 'transform', 'translate3d('+x+','+y+',0)');
     } else if (this.transform2DSupport) {
       this.css(element, 'transform', 'translate('+x+','+y+')');
-        this.css(element, 'filter', 'drop-shadow(rgba(255, 255, 0, 0.247059) 0px 0px 10px) blur('+blur+')'); // MY
     } else {
       element.style.left = x;
       element.style.top = y;
@@ -499,34 +466,7 @@
       var depthY = this.depthsY[i];
       var xOffset = this.vx * (depthX * (this.invertX ? -1 : 1));
       var yOffset = this.vy * (depthY * (this.invertY ? -1 : 1));
-        
-        
-        // IMPORTANT OFFSET IS HERE, WHEN PAGE LOADED LAYERS ARE IN POSITIONS
-        // ПРИ ПРОГРУЗКЕ СЛОИ НА СВОИХ МЕСТАХ(ПОЗИЦИЯХ) В МОБИЛЬНОЙ ВЕРСИИ В ЦЕНТРЕ
-        if ($(window).width() > 1200) {
-            if (mousemove == 1){
-                this.setPosition(layer, xOffset, yOffset);
-            }
-            else{
-                if (i == 1){
-                    this.setPosition(layer, -86, -64);
-                }
-                else if (i == 2){
-                    this.setPosition(layer, 215, 161);
-                }
-                else if (i == 3){
-                    this.setPosition(layer, -258, -193);
-                }
-                else{
-                    this.setPosition(layer, xOffset, yOffset);
-                }
-            }
-            
-        }
-        else{
-            this.setPosition(layer, xOffset, yOffset);
-        }
-        
+      this.setPosition(layer, xOffset, yOffset);
     }
     this.raf = requestAnimationFrame(this.onAnimationFrame);
   };
@@ -603,11 +543,8 @@
       this.iy = (clientY - this.wcy) / this.wry;
     }
   };
-    
-    
 
   // Expose Parallax
   window[NAME] = Parallax;
-    
 
 })(window, document);
