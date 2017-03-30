@@ -64,7 +64,17 @@
     
     <div class="navigation animated">
         <div class="wrap nav-border">
+            <a href="">
+            <div class="nav-inst-mob">
+                <img src="./img/nav_inst.svg" alt="">
+            </div>
+            </a>
             <div class="nav-logo"><img src="./img/logo.svg" alt=""></div>
+            <div class="burger">
+                <div class="bl-1"></div>
+                <div class="bl-2"></div>
+                <div class="bl-3"></div>
+            </div>
             <div class="navigations">
                 <div class="nav"><a href="#main">ГЛАВНАЯ</a></div>
                 <div class="nav"><a href="#about">О ПРОЕКТЕ</a></div>
@@ -75,13 +85,15 @@
                 <div class="nav"><a href="#steps">УЧАСТИЕ</a></div>
                 <div class="nav"><a href="#prices">СТОИМОСТЬ</a></div>
                 <div class="nav"><a href="#partners">ПАРТНЕРЫ</a></div>
+                <div class="nav-stroke"><div class="nav-stroke-line"></div></div>
+                <a href="">
+                <div class="nav-cab">
+                    <img src="./img/nav_cab.svg" alt="">
+                    <p>ЛИЧНЫЙ КАБИНЕТ</p>
+                </div>
+                </a>
             </div>
-            <a href="">
-            <div class="nav-cab">
-                <img src="./img/nav_cab.svg" alt="">
-                <p>ЛИЧНЫЙ КАБИНЕТ</p>
-            </div>
-            </a>
+            
             <a href="">
             <div class="nav-inst">
                 <img src="./img/nav_inst.svg" alt="">
@@ -215,6 +227,7 @@
         <div class="sm-img"><img src="./img/trainer.png" alt=""></div>
         <div class="sm-texts">
             <h3>Кто я?</h3>
+            <div class="sm-img-mob"><img src="./img/trainer-mob.png" alt=""></div>
             <h4>Владимир Морозов</h4>  
             <p>Бодибилдер, персональный фитнес-тренер, чемпион Казахстана в номинации "Men's Physique", участник международных турниров, а также любит делиться отрывками из своей жизни в instagram :)</p>
             <h5>«Соперник и деньги – основные моменты в любых соревнованиях. Я тот, кто даст тебе "Способ", 30 дней и 850 000 тг, чтобы ты победил себя!»</h5>
@@ -397,12 +410,29 @@
             <img src="./img/partner3.png" alt="">
             <img src="./img/partner4.png" alt="">
         </div>
-    </div>
+        
+        <div id="slick-slider-0">
+            <div class="slick-slide">
+                <div class="slick-img"><img src="./img/partner1.png" alt=""></div>
+            </div>
+            
+            <div class="slick-slide">
+                <div class="slick-img"><img src="./img/partner2.png" alt=""></div>
+            </div>
+            
+            <div class="slick-slide">
+                <div class="slick-img"><img src="./img/partner3.png" alt=""></div>
+            </div>
+            
+            <div class="slick-slide">
+                <div class="slick-img"><img src="./img/partner4.png" alt=""></div>
+            </div>
+        </div>
 </section>
  
  <footer class="footer">
     <div class="wrap">
-       
+        <!--
         <div class="foot-navigation">
             <div class="foot"><a href="#main">ГЛАВНАЯ</a></div>
             <div class="foot"><a href="#about">О ПРОЕКТЕ</a></div>
@@ -413,6 +443,21 @@
             <div class="foot"><a href="#steps">УЧАСТИЕ</a></div>
             <div class="foot"><a href="#prices">СТОИМОСТЬ</a></div>
             <div class="foot"><a href="#partners">ПАРТНЕРЫ</a></div>
+        </div>-->
+        
+        <div class="foot-mob">
+               <a href="">
+                    <div class="foot-cab">
+                        <img src="./img/login_footer.svg" alt="">
+                        <p>ЛИЧНЫЙ КАБИНЕТ</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="foot-inst">
+                        <img src="./img/instagram_footer.svg" alt="">
+                        <p>V_MOROZOV</p>
+                    </div>
+                </a>
         </div>
         
         <div class="foot-center">
@@ -488,107 +533,35 @@
 <script type="text/javascript">	
     $(document).ready(function(){
         
-    /* SLICK SLIDERS */
-    
-    $('#slick-slider-main').slick({
-        centerMode: false,
-        slidesToShow: 1,
-        centerPadding: '0px',
-        arrows: true,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 4000,
-    });    
-        
-    $('#slick-slider-0').slick({
-        centerMode: false,
-        slidesToShow: 1,
-        centerPadding: '0px',
-        arrows: true,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 4000,
-    });
-    
-    $('.slick-slider-1').slick({
-        centerMode: false,
-        slidesToShow: 3,
-        centerPadding: '0px',
-        arrows: true,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        responsive: [
-        {
-          breakpoint: 1000,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 700,
-          settings: {
+        /* SLICK SLIDERS */
+
+        $('#slick-slider-0').slick({
+            centerMode: false,
             slidesToShow: 1,
-          }
-        }
-    ]
-    });
-        
+            centerPadding: '0px',
+            arrows: true,
+            dots: false,
+            autoplay: true,
+            autoplaySpeed: 4000,
+        });    
+
         $('.navigations').InPageNav({
-                currentClass: 'nav-active',
-                scrollSpeed: 1000,
-                scrollOffset: 60,
-                scrollThreshold: 0.5,
-                filter: '',
-                easing: 'swing',
-                begin: function() {
-
+            currentClass: 'nav-active',
+            scrollSpeed: 1000,
+            scrollOffset: 60,
+            scrollThreshold: 0.5,
+            filter: '',
+            easing: 'swing',
+            begin: function() {
                 },
-                end: function() {
-                    //$('body').removeClass('menu-opened').addClass('menu-closed');
-                },
-                scrollChange: function($currentListItem) {
-                        // Fired when you enter a section and pass the list item of the section
+            end: function() {
+                //$('body').removeClass('menu-opened').addClass('menu-closed');
+            },
+            scrollChange: function($currentListItem) {
+                    // Fired when you enter a section and pass the list item of the section
                 }
         });
         
-        $('.foot-navigation').InPageNav({
-                currentClass: 'nav-active',
-                scrollSpeed: 1000,
-                scrollOffset: 60,
-                scrollThreshold: 0.5,
-                filter: '',
-                easing: 'swing',
-                begin: function() {
-
-                },
-                end: function() {
-                    //$('body').removeClass('menu-opened').addClass('menu-closed');
-                },
-                scrollChange: function($currentListItem) {
-                        // Fired when you enter a section and pass the list item of the section
-                }
-        });
-        /*
-        $('.menu').InPageNav({
-                                currentClass: 'menu-item--active',
-                                scrollSpeed: 1000,
-                                scrollOffset: 60,
-                                scrollThreshold: 0.5,
-                                filter: '',
-                                easing: 'swing',
-                                begin: function() {
-                                    // Fired when the animation is starting
-                                },
-                                end: function() {
-                                    // Fired when the animation is ending
-                                },
-                                scrollChange: function($currentListItem) {
-                                    // Fired when you enter a section and pass the list item of the section
-                                }
-                            });
-     
-        */
     });
 </script>
 

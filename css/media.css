@@ -8,9 +8,147 @@
 }
 
 /* mobile WIDTH fixes */
+@media only screen and (max-width : 1800px) {
+    .header-before, .header-after{width: 200px;}
+    
+}
+
+@media only screen and (max-width : 1600px) {
+    .header-before, .header-after{top: 300px!important; width: 200px;}
+    
+}
+
 @media only screen and (max-width : 1500px) {
     .wrap{float: left; width: 80%; margin-left: 10%; margin-right: 10%; height: auto;}
+    
+}
+
+@media only screen and (max-width : 1300px) {
+    .header-before, .header-after{top: 150px!important; width: 200px;}
+    .header-content h3{ margin-top: 150px; }
+    
+}
+
+@media only screen and (max-width : 1200px) {
+    .burger{ display: block; }
+    .nav-inst{ display: none; }
+    .nav-inst-mob{ display: block; }
+    .navigations{display: none;}
+    .nav-logo{ width: calc(100% - 40px); text-align: center; }
+    .nav-logo img{ display: inline-block; height: 17px; width: auto; }
+    .navigation{ top: 0; }
+    
+    .navigations{ position: fixed; margin: 0; width: 100%; top: 68px; left: 0; background: #fff; padding-bottom: 20px; }
+    
+    .navigations.navigations-active{ display: block; }
+
+    .nav{ width: 100%; text-align: center; margin-top: 5px; }
+    
+    .nav-stroke{ display: block; }
+
+    .nav-cab{ width: 100%; margin-top: 15px; text-align: center; height: 20px; }
+    .nav-cab img{ float: none; display: inline-block; vertical-align: top; }
+    .nav-cab p{ float: none; display: inline-block; vertical-align: top; margin-right: 90px; }
+}
+
+@media only screen and (max-width : 1100px) {
+    .header-before, .header-after{top: 150px!important; width: 150px;}
+    .header-content h3{ margin-top: 100px; }
+}
+
+@media only screen and (max-width : 1050px) {
+    .prize{ width: 100%; margin-bottom: 25px; }
+}
+
+@media only screen and (max-width : 1000px) {
+    .header-parallax{ height: auto; overflow: visible; background: url(../img/header-morozov-mob.png) center center no-repeat; background-size: cover; margin-top: 100px; }
+    
+    .header-content{ position: static; float: left; top: auto; left: auto; margin-bottom: 100px; }
+    
+    .header-morozov, .header-before, .header-after{ display: none; }
+    
+    .header-content h1{ font-size: 20px; font-weight: normal;}
+    .header-content h3{ margin-top: 100px; }
+    
+    .section-about{ margin-top: 40px; }
+}
+
+
+@media only screen and (max-width : 900px) {
+    .sr-box{width: 40%;}   
+    .section-about{ margin-top: 0; }
+}
+
+@media only screen and (max-width : 850px) {
+    .foot-right{ display: none; }
+    .foot-mob{ display: block; }
+    
+    .foot-center{ margin-top: 15px; border-top: 1px solid #67717a; padding: 0 0 25px 0; }
+    .foot-left{ text-align: center; width: 100%; }
+    .foot-left img{ float: none; margin-top: 25px; display: inline-block; vertical-align: top; }
+    .foot-left p{ float: none; margin-top: 25px; display: inline-block; margin-left: 5px;  text-align: left; vertical-align: top; }
+}
+
+@media only screen and (max-width : 800px) {
+    .header-content{ margin-bottom: 40px; }
+    
+    .gnt-1, .gnt-2, .gnt-3{ display: none; }
+    
+    .la-img{ display: none; }
+    .la-texts{ width: 100%; }
+    .la-texts h3{ text-align: center; }
+    .la-row { margin-bottom: 14px;}
+    
+    .who-box{ width: 50%; }
+    
+    .sm-img{  display: none;}
+    .sm-img-mob{ display: block;}
+    .sm-texts{ width: 100%; }
+    .sm-texts h3{ margin-top: 5px; text-align: center; }
+    .sm-texts h4{ margin-top: 0; }
+    
+    .sm-icon{ width: 41%; }
+    .step-box{ width: 50%; }
+    
+    .section-prizes{ margin-top: 30px; }
+    .section-who, .section-morozov{ margin-top: 0; }
+    
+    .after-footer{ text-align: center; }
+    .gi-footer{float: none; display: inline-block; }
+}
+
+
+@media only screen and (max-width : 650px) {
+    .hc-1{ top: 160px; right: 0px; }    
+
+}
+
+@media only screen and (max-width : 600px) {
+    .step-box{ width: 100%; }
+    
+    .partners-imgs{ display: none; }
+    #slick-slider-0{ display: block; }
+}
+
+@media only screen and (max-width : 500px) {
+    .sm-img-mob img{ width: 80%; }
+}
+    
+    
+@media only screen and (max-width : 450px) {
+    .who-box{ width: 100%; margin-bottom: 15px; }
+    .sr-box{width: 90%; margin: 25px 0;}   
+    
+    h2, .section-results h2, .sm-texts h3, .la-texts h3 { font-size: 25px; }
 }
 
 @media only screen and (max-width : 400px) {
+    #slick-slider-0 img{ width: 70%; }
+}
+
+@media only screen and (max-width : 350px) {
+    .prize img{ height: auto; width: 100%; }
+}
+@media only screen and (max-width : 320px) {
+    .sm-icon{ width: 91%;}
 }

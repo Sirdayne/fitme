@@ -8,11 +8,6 @@ $(document).ready(function(){
         $('.modal-back, .modal').fadeIn(500);
     });
     
-    $('body').on('click','.burger' , function(){
-        $(this).toggleClass('nav-active');
-        $('.navigation').toggleClass('nav-active');
-    });
-    
     $('.work-box__left__circle, .work-box__right__circle').addClass('wow fadeInDown');
     $('.work-box__left__line, .work-box__right__line').addClass('wow aniline');
     
@@ -23,17 +18,22 @@ $(document).ready(function(){
     $('.service-part__image').attr('data-wow-delay','.7s');
     */
     
+    $('body').on('click','.burger' , function(){
+        $(this).toggleClass('b-active');
+        $('.navigations').toggleClass('navigations-active');
+    });
+    
     //PARALLAX
-    if ($(window).width() > 1200) {
+    if ($(window).width() > 1000) {
         var scene = document.getElementById('main');
         var parallax = new Parallax(scene, {
             originX: 0.5,
             originY: 0.5
         });
     }
-    else{
+    //else{
         
-    }
+    //}
     
     $('.section-about').waypoint({
         handler: function(direction) {

@@ -327,7 +327,7 @@
     
     height: 30px;
     width: 30px;
-    background: url(../img/green-prev.png) center center no-repeat;
+    background: url(../img/left.svg) center center no-repeat;
     background-size: cover;
 }
  .slick-next{
@@ -338,7 +338,7 @@
      
     height: 30px;
     width: 30px;
-    background: url(../img/green-next.png) center center no-repeat;
+    background: url(../img/right.svg) center center no-repeat;
     background-size: cover;
 }
 .slick-img{
@@ -369,26 +369,30 @@
     width: 100%;
     float: left;
     
-    margin-top: 80px;
+    margin-top: 20px;
     z-index: 1;
+    
+    display: none;
 }
 
 #slick-slider-0 img{
-    width: 100%;
+    width: 50%;
     margin: auto;
 }
 #slick-slider-0 .slick-prev{
     top: auto;
     left: auto;
-    bottom: 7px;
-    right: 80px;
+    top: 50px;
+    left: -15px;
 }
 #slick-slider-0 .slick-next{
     top: auto;
     left: auto;
-    bottom: 7px;
-    right: 40px;
+    top: 50px;
+    right: -15px;
 }
+
+
 
 /* slick-slider-main */
 
