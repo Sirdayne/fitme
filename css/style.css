@@ -40,117 +40,59 @@ input {
   margin-right: 10%;
   height: auto;
 }
-.modal-back {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 9000px;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 11;
-  display: none;
-}
 .modal-wrapper {
   position: fixed;
   height: 0;
   top: 0;
   left: 0;
   width: 100%;
+  height: 9999px;
   z-index: 12;
+  background: #fff;
+  z-index: 1000;
+  display: none;
+}
+.modal-wrapper.js-active {
+  display: block;
+}
+.modal-cabinet {
+  float: left;
+  width: 100%;
+  margin-top: 200px;
+}
+.modal-cabinet .call-row {
+  margin-top: 10px;
+}
+.modal-cabinet .call-row button {
+  width: 180px;
+}
+.js-cabinet {
+  cursor: pointer;
 }
 .modal-close {
   position: absolute;
-  height: 40px;
-  width: 40px;
-  background: url(../img/modal-close.png) center center no-repeat;
-  background-size: cover;
+  height: 20px;
+  width: 20px;
   top: 25px;
   right: 25px;
   cursor: pointer;
 }
-.modal .modal-close,
-.modal-calc .modal-close {
-  top: 10px;
-  right: 10px;
-  height: 30px;
-  width: 30px;
+.modal-close img {
+  height: inherit;
+  width: auto;
 }
 .opacity-one {
   opacity: 1;
-}
-.modal {
-  display: block;
-  margin: 150px auto;
-  height: auto;
-  min-height: 200px;
-  max-width: 700px;
-  width: 90%;
-  background: #fff;
-  color: #3b3b3b;
-  text-align: center;
-  z-index: 4;
-  padding-top: 20px;
-  padding-bottom: 2px;
-  display: none;
-  position: relative;
 }
 .btns-row {
   float: left;
   width: 100%;
   margin-top: 25px;
 }
-.modal input {
-  display: inline-block;
-  width: 140px;
-  padding: 10px 25px;
-  margin-right: 20px;
-  margin-left: 20px;
-  height: 12px;
-  outline: none;
-  border: none;
-  border: 1px solid #5d4063;
-  background: rgba(0, 0, 0, 0);
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
-  font-size: 12px;
-  font-family: "RalewayRegular";
-}
-.send-btn {
-  display: inline-block;
-}
 .anchors {
   float: left;
   width: 100%;
   height: 0;
-}
-.modal-title {
-  float: left;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 16px;
-  font-family: "RalewayRegular";
-  color: #212573;
-}
-.thx {
-  display: block;
-  margin: 150px auto;
-  height: auto;
-  width: 350px;
-  background: #fff;
-  color: #212573;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
-  outline: none;
-  border: none;
-  border: 1px solid #5d4063;
-  font-size: 17px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  text-align: center;
-  z-index: 13;
-  display: none;
 }
 .navigation {
   position: absolute;
@@ -190,6 +132,8 @@ input {
   width: calc(100% - 120px);
   display: flex;
   justify-content: space-between;
+  -webkit-transition: 0.5s cubic-bezier(0.13, 0.94, 0.65, 0.96);
+  transition: 0.5s cubic-bezier(0.13, 0.94, 0.65, 0.96);
 }
 .nav {
   font-size: 12px;
@@ -230,11 +174,17 @@ input {
   float: left;
   width: auto;
   margin-left: 30px;
+  cursor: pointer;
 }
-.nav-cab img {
+.nav-cab svg {
   float: left;
   width: 20px;
   height: auto;
+}
+.nav-cab path {
+  fill: #000;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
 }
 .nav-cab p {
   float: left;
@@ -243,25 +193,63 @@ input {
   line-height: 20px;
   color: #000;
   font-family: "RalewayBold";
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+.nav-cab:hover path {
+  fill: #960000;
+}
+.nav-cab:hover p {
+  color: #960000;
 }
 .nav-inst {
   float: right;
   width: auto;
+  margin-top: 1px;
 }
-.nav-inst img {
+.nav-inst svg {
   float: left;
-  width: 18px;
+  width: 17px;
   height: auto;
+}
+.nav-inst path {
+  fill: #000;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+}
+.nav-inst:hover #p-1 {
+  fill: url(#lg1);
+}
+.nav-inst:hover #p-2 {
+  fill: url(#lg2);
+}
+.nav-inst:hover #p-3 {
+  fill: url(#lg3);
 }
 .nav-inst-mob {
   float: left;
   width: auto;
   display: none;
+  margin-top: 1px;
 }
-.nav-inst-mob img {
+.nav-inst-mob svg {
   float: left;
-  width: 18px;
+  width: 17px;
   height: auto;
+}
+.nav-inst-mob path {
+  fill: #000;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+}
+.nav-inst-mob:hover #p-1 {
+  fill: url(#lg1);
+}
+.nav-inst-mob:hover #p-2 {
+  fill: url(#lg2);
+}
+.nav-inst-mob:hover #p-3 {
+  fill: url(#lg3);
 }
 .burger {
   float: right;
@@ -918,10 +906,15 @@ input {
   float: left;
   width: auto;
 }
-.foot-inst img {
+.foot-inst svg {
   float: left;
-  height: 24px;
+  height: 22px;
   width: auto;
+}
+.foot-inst path {
+  fill: #67717a;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
 }
 .foot-inst p {
   float: left;
@@ -930,16 +923,29 @@ input {
   color: #67717a;
   font-size: 12px;
   font-family: "RalewayBold";
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+.foot-inst:hover path {
+  fill: #fff;
+}
+.foot-inst:hover p {
+  color: #fff;
 }
 .foot-cab {
   float: left;
   width: auto;
   margin-left: 40px;
 }
-.foot-cab img {
+.foot-cab svg {
   float: left;
   height: 24px;
   width: auto;
+}
+.foot-cab path {
+  fill: #67717a;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
 }
 .foot-cab p {
   float: left;
@@ -948,6 +954,14 @@ input {
   color: #67717a;
   font-size: 12px;
   font-family: "RalewayBold";
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+.foot-cab:hover path {
+  fill: #fff;
+}
+.foot-cab:hover p {
+  color: #fff;
 }
 .foot-mob {
   float: left;
@@ -960,12 +974,15 @@ input {
   margin: 0 10px;
   text-align: center;
 }
-.foot-mob .foot-inst img {
+.foot-mob .foot-inst svg {
   display: inline-block;
   float: none;
-  height: 24px;
+  height: 22px;
   width: auto;
   vertical-align: top;
+}
+.foot-mob .foot-inst path {
+  fill: #67717a;
 }
 .foot-mob .foot-inst p {
   display: inline-block;
@@ -977,13 +994,19 @@ input {
   font-family: "RalewayBold";
   vertical-align: top;
 }
+.foot-mob .foot-inst:hover path {
+  fill: #fff;
+}
+.foot-mob .foot-inst:hover p {
+  color: #fff;
+}
 .foot-mob .foot-cab {
   float: left;
   width: 100%;
   margin: 15px 0 10px;
   text-align: center;
 }
-.foot-mob .foot-cab img {
+.foot-mob .foot-cab svg {
   display: inline-block;
   float: none;
   height: 24px;
@@ -999,6 +1022,12 @@ input {
   font-size: 12px;
   font-family: "RalewayBold";
   vertical-align: top;
+}
+.foot-mob .foot-cab:hover path {
+  fill: #fff;
+}
+.foot-mob .foot-cab:hover p {
+  color: #fff;
 }
 .after-footer {
   float: left;
@@ -1016,11 +1045,24 @@ input {
   margin-top: 3px;
   width: auto;
 }
+.gi-footer path {
+  fill: #67717a;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
 .gi-footer p {
   float: left;
   margin-right: 10px;
   color: #67717a;
   font-size: 12px;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+.gi-footer:hover path {
+  fill: #2281c1;
+}
+.gi-footer:hover p {
+  color: #fff;
 }
 .gnt-1 {
   display: block;
